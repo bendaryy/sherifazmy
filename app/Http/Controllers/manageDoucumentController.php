@@ -588,7 +588,7 @@ class manageDoucumentController extends Controller
         );
         // return ($cancel);
         if ($cancel->ok()) {
-            return redirect()->route('sentInvoices')->with('success', 'تم تقديم طلب الغاء الفاتورة بنجاح سيتم الموافقة او الرفض فى خلال 3 ايام');
+            return redirect()->route('sentInvoices')->with('success', 'تم تقديم طلب الغاء الفاتورة بنجاح سيتم الموافقة او الرفض فى خلال 7 ايام');
         } else {
             return redirect()->route('sentInvoices')->with('error', $cancel['error']['details'][0]['message']);
         }
@@ -614,7 +614,7 @@ class manageDoucumentController extends Controller
         );
         // return ($cancel);
         if ($cancel->ok()) {
-            return redirect()->route('receivedInvoices')->with('success', 'تم تقديم طلب رفض الفاتورة بنجاح سيتم الموافقة او الرفض فى خلال 3 ايام');
+            return redirect()->route('receivedInvoices')->with('success', 'تم تقديم طلب رفض الفاتورة بنجاح سيتم الموافقة او الرفض فى خلال 7 ايام');
         } else {
             return redirect()->route('receivedInvoices')->with('error', $cancel['error']['details'][0]['message']);
         }
