@@ -105,10 +105,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <button type="submit" class="btn btn-success" style="text-align: center;min-width: 250px!important;background-color: #1598ca;
                                             border-color: #1598ca; margin-bottom: 30px;">@lang('site.fillDetails')</button>
-                    </div>
+                    </div> --}}
             </form>
         @else
             <div style="text-align: center">
@@ -144,132 +144,10 @@
                                     </select>
                                 </div>
                             </div>
-
-                            @if (request()->routeIs('createInvoice2'))
-                                @foreach ($companiess as $com)
-                                    <div class="col-6">
-                                        <label class="form-label">@lang('site.Receiver_to')</label>
-                                        <div class="">
-                                            <input type="text" class="form-control text-center" name="receiverName"
-                                                placeholder="@lang('site.Receiver_to')" value="{{ $com->name }}">
-                                        </div>
-                                    </div>
-                        </div>
-
-
-
-                        <div class="invoice-address-client-fields">
-                            <div class="row">
-
-                                <div class="form-group col-4">
-                                    <label class="form-label">@lang('site.Reciever_Registration_Number_ID')</label>
-                                    <div class="">
-                                        <input type="number" style="width:300px" class="form-control text-center"
-                                            name="receiverId" placeholder="@lang('site.Reciever_Registration_Number_ID')"
-                                            value="{{ $com->tax_id }}">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-4">
-                                    <label class="form-label">@lang('site.Country')</label>
-                                    <div class="">
-                                        <input type="text" class="form-control text-center" name="receiverCountry"
-                                            placeholder="@lang('site.Country')" value="{{ $com->country }}">
-                                    </div>
-                                </div>
-                                <div class="form-group col-4">
-                                    <label class="form-label">@lang('site.Governorate')</label>
-                                    <div class="">
-                                        <input type="text" class="form-control text-center" name="receiverGovernate"
-                                            placeholder="@lang('site.Governorate')" value="{{ $com->governate }}">
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="form-group col-6">
-                                    <label class="form-label">@lang('site.City')</label>
-                                    <div class="">
-                                        <input type="text" class="form-control text-center" name="receiverRegionCity"
-                                            placeholder="@lang('site.City')" value="{{ $com->regionCity }}">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-6">
-                                    <label class="form-label">@lang('site.StreetName') </label>
-                                    <div class="">
-                                        <input type="text" class="form-control text-center" name="street"
-                                            placeholder="@lang('site.StreetName')" value="{{ $com->street }}">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-
-
-
-                                <div class="form-group col-6">
-                                    <label class="form-label">@lang('site.Building_Name_No')</label>
-                                    <div class="">
-                                        <input type="text" class="form-control text-center" name="receiverBuildingNumber"
-                                            placeholder="@lang('site.Building_Name_No')"
-                                            value="{{ $com->buildingNumber }}">
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group col-6">
-                                    <label class="form-label"> @lang('site.PostalCode')</label>
-                                    <div class="">
-                                        <input type="text" class="form-control text-center" name="receiverPostalCode"
-                                            placeholder="@lang('site.PostalCode') " value="{{ $com->postalCode }}">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="form-group col-6">
-                                    <label class="form-label">@lang('site.FloorNo')</label>
-                                    <div class="">
-                                        <input type="text" class="form-control  text-center" name="receiverFloor"
-                                            placeholder="@lang('site.FloorNo')" value="{{ $com->floor }}">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-6">
-                                    <label class="form-label"> @lang('site.FlatNo')</label>
-                                    <div class="">
-                                        <input type="text" class="form-control  text-center" name="receiverRoom"
-                                            placeholder="@lang('site.FlatNo')" value="{{ $com->room }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-6">
-                                    <label class="form-label">@lang('site.landmark')</label>
-                                    <div class="">
-                                        <input type="text" class="form-control  text-center" name="receiverLandmark"
-                                            placeholder="@lang('site.landmark')" value="{{ $com->landmark }}">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-6">
-                                    <label class="form-label"> @lang('site.AdditionalInformation')</label>
-                                    <div class="">
-                                        <input type="text" class="form-control  text-center"
-                                            name="receiverAdditionalInformation"
-                                            placeholder="@lang('site.AdditionalInformation') "
-                                            value="{{ $com->additionalInformation }}">
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        @else
                             <div class="col-6">
                                 <label class="form-label">@lang('site.Receiver_to')</label>
                                 <div class="">
-                                    <input type="text" class="form-control text-center" name="receiverName"
+                                    <input type="text" class="form-control text-center" id="getReceiverName" name="receiverName"
                                         placeholder="@lang('site.Receiver_to')">
                                 </div>
                             </div>
@@ -280,7 +158,7 @@
                                     <div class="col-4">
                                         <label class="form-label">@lang('site.Reciever_Registration_Number_ID')</label>
                                         <div class="">
-                                            <input type="number" style="width:350px" class="form-control text-center"
+                                            <input type="number" id="getReceiverId" style="width:350px" class="form-control text-center"
                                                 name="receiverId"
                                                 placeholder="@lang('site.Reciever_Registration_Number_ID')">
                                         </div>
@@ -289,14 +167,14 @@
                                     <div class="col-4">
                                         <label class="form-label">@lang('site.Country')</label>
                                         <div class="">
-                                            <input type="text" class="form-control  text-center" name="receiverCountry" value="EG"
+                                            <input type="text" class="form-control  text-center" id="getReceiverCountry" name="receiverCountry" value="EG"
                                                 placeholder="@lang('site.Country')">
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">@lang('site.Governorate')</label>
                                         <div class="">
-                                            <input type="text" class="form-control text-center" name="receiverGovernate"
+                                            <input type="text" id="getReceiverGovernate" class="form-control text-center" name="receiverGovernate"
                                                 placeholder="@lang('site.Governorate')">
                                         </div>
                                     </div>
@@ -307,7 +185,7 @@
                                     <div class="col-6">
                                         <label class="form-label">@lang('site.City')</label>
                                         <div class="">
-                                            <input type="text" class="form-control text-center" name="receiverRegionCity"
+                                            <input type="text" id="getReceiverRegionCity" class="form-control text-center" name="receiverRegionCity"
                                                 placeholder="@lang('site.City')">
                                         </div>
                                     </div>
@@ -315,7 +193,7 @@
                                     <div class="col-6">
                                         <label class="form-label">@lang('site.StreetName') </label>
                                         <div class="">
-                                            <input type="text" class="form-control text-center" name="street"
+                                            <input type="text" id="getStreet" class="form-control text-center" name="street"
                                                 placeholder="@lang('site.StreetName')">
                                         </div>
                                     </div>
@@ -327,7 +205,7 @@
                                     <div class="col-6">
                                         <label class="form-label">@lang('site.Building_Name_No')</label>
                                         <div class="">
-                                            <input type="text" class="form-control  text-center"
+                                            <input type="text" id="getBuildingNumber" class="form-control  text-center"
                                                 name="receiverBuildingNumber" placeholder="@lang('site.Building_Name_No')">
                                         </div>
                                     </div>
@@ -336,7 +214,7 @@
                                     <div class="col-6">
                                         <label class="form-label"> @lang('site.PostalCode')</label>
                                         <div class="">
-                                            <input type="text" class="form-control text-center" name="receiverPostalCode"
+                                            <input type="text" id="getPostalCode" class="form-control text-center" name="receiverPostalCode"
                                                 placeholder="@lang('site.PostalCode')">
                                         </div>
                                     </div>
@@ -346,7 +224,7 @@
                                     <div class="col-6">
                                         <label class="form-label"> @lang('site.FloorNo')</label>
                                         <div class="">
-                                            <input type="text" class="form-control text-center" name="receiverFloor"
+                                            <input type="text" id="getFloor" class="form-control text-center" name="receiverFloor"
                                                 placeholder="  @lang('site.FloorNo')">
                                         </div>
                                     </div>
@@ -354,7 +232,7 @@
                                     <div class="col-6">
                                         <label class="form-label">@lang('site.FlatNo')</label>
                                         <div class="">
-                                            <input type="text" class="form-control text-center" name="receiverRoom"
+                                            <input type="text" id="getRoom" class="form-control text-center" name="receiverRoom"
                                                 placeholder="@lang('site.FloorNo')">
                                         </div>
                                     </div>
@@ -364,7 +242,7 @@
                                     <div class="col-6">
                                         <label class="form-label"> @lang('site.landmark')</label>
                                         <div class="">
-                                            <input type="text" class="form-control  text-center" name="receiverLandmark"
+                                            <input type="text" id="getLandMark" class="form-control  text-center" name="receiverLandmark"
                                                 placeholder="@lang('site.landmark')">
                                         </div>
                                     </div>
@@ -372,13 +250,13 @@
                                     <div class="col-6">
                                         <label class="form-label"> @lang('site.AdditionalInformation')</label>
                                         <div class="">
-                                            <input type="text" class="form-control text-center"
+                                            <input type="text" id="getAdditional" class="form-control text-center"
                                                 name="receiverAdditionalInformation"
                                                 placeholder="@lang('site.AdditionalInformation')">
                                         </div>
                                     </div>
                                 </div>
-                                @endif
+
 
 
                                 <div class="row">
@@ -1132,3 +1010,37 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+ <script>
+    $(document).ready(function(){
+        $(document).on('change', '#receiverName',function(){
+             var select = $(this).val();
+                 $.ajax({
+      url: `{{URL::to('getcompany/${select}')}}`,
+      type: "GET",
+      dataType: "json",
+      // data: {
+      //   select: select,
+      // },
+      success: function (data) {
+        $("#getReceiverName").val(data.name);
+        $("#getReceiverId").val(data.tax_id);
+        $("#getReceiverCountry").val(data.country);
+        $("#getReceiverGovernate").val(data.governate);
+         $("#getReceiverRegionCity").val(data.regionCity);
+        $("#getStreet").val(data.street);
+        $("#getBuildingNumber").val(data.buildingNumber);
+        $("#getPostalCode").val(data.postalCode);
+        $("#getFloor").val(data.floor);
+        $("#getRoom").val(data.room);
+        $("#getLandMark").val(data.landmark);
+        $("#getAdditional").val(data.additionalInformation);
+      },
+      error: function () {
+        console.log("error in request");
+      },
+    });
+        });
+
+    });
+</script>
