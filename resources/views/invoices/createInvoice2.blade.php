@@ -290,7 +290,7 @@
                                     <div class="col-6">
                                         <label class="form-label"> @lang('site.Date Time Issued')</label>
                                         <div class="">
-                                            <input type="date" value="{{ date(' Y-m-d') }}"
+                                            <input type="date" value="{{ date('Y-m-d') }}"
                                                 class="form-control text-center" name="date" placeholder="">
                                         </div>
                                     </div>
