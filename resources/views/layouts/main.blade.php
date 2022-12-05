@@ -124,11 +124,11 @@
                                 <i class="bx bx-right-arrow-alt"></i>@lang('site.received_documents')</a>
                         </li>
                         <li> <a href="{{ route('createInvoice') }}">
-                                <i class="bx bx-right-arrow-alt"></i>اضافة وثيقة بالجنيه</a>
+                                <i class="bx bx-right-arrow-alt"></i>اضافة وثيقة جديدة</a>
                         </li>
-                        <li> <a href="{{ route('createInvoiceDollar') }}">
+                        {{-- <li> <a href="{{ route('createInvoiceDollar') }}">
                                 <i class="bx bx-right-arrow-alt"></i>اضافة وثيقة بالدولار</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 
@@ -360,7 +360,7 @@
                 class='bx bxs-up-arrow-alt'></i></a>
         <!--End Back To Top Button-->
         <footer class="page-footer">
-            <p class="mb-0">Copyright © 2021. Developed By <a href="" target=".blank">شريف عزمى بطرس منصور
+            <p class="mb-0">Copyright © 2022. Developed By <a href="" target=".blank">شريف عزمى بطرس منصور
                     </a></p>
         </footer>
     </div>

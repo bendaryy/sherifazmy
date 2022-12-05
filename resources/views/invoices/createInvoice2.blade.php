@@ -262,7 +262,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <label for="payment-method-country" class="form-label">
-                                            @lang('site.Receiver_to')</label>
+                                            كود النشاط</label>
                                         <div class="">
                                             <select name="taxpayerActivityCode" class="form-select">
 
@@ -273,8 +273,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <label for="payment-method-country" class="form-label">@lang('site.Document
-                                            Type')
+                                        <label for="payment-method-country" class="form-label">نوع الوثيقة
                                         </label>
                                         @livewire('type')
                                     </div>
@@ -502,12 +501,10 @@
                                                             </select>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label for="lineTaxT4" class="form-label">@lang("site.Tax
-                                                                t4 Value")</label>
+                                                            <label for="lineTaxT4" class="form-label">نسبة الضريبة</label>
                                                             <input type="number" class="form-control" name="t4rate[]"
                                                                 id="t4rate" onkeyup="findTotalt4Amount()"
-                                                                onmouseover="findTotalt4Amount()" placeholder="@lang("
-                                                                site.Tax t4 Value")">
+                                                                onmouseover="findTotalt4Amount()" placeholder="نسبة الضريبة">
                                                         </div>
                                                     </div>
                                                     <div class="row g-3">
@@ -627,7 +624,7 @@
                                                 id="totalt4Amount">
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="salesTotal" class="form-label">إجمالى المبيعات</label>
+                                            <label for="salesTotal" class="form-label">إجمالى الخصم</label>
                                             <input type="number" class="form-control" name="totalDiscountAmount"
                                                 onmouseover="findTotalDiscountAmount()" onkeyup="findTotalDiscountAmount()"
                                                 readonly id="totalDiscountAmount">
@@ -777,9 +774,9 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="lineTaxT4" class="form-label">@lang("site.Tax t4 Value")</label>
+                                        <label for="lineTaxT4" class="form-label">نسبة الضريبة</label>
                                         <input type="number" class="form-control" name="t4rate[]" id="t4rate${i}" onkeyup="findTotalt4Amount()"
-                                            onmouseover="findTotalt4Amount()" placeholder="@lang("site.Tax t4 Value")">
+                                            onmouseover="findTotalt4Amount()" placeholder="نسبة الضريبة">
                                     </div>
                                 </div>
                                 <div class="row g-3">
